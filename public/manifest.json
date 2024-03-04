@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "DinoJumpMaster",
+  "version": "0.0.5",
+  "description": "Tired of losing to pixelated cacti? DinoCheat injects a script to keep you running forever.",
+  "background": {
+    "service_worker": "./js/background.js"
+  },
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "content_scripts": [{
+    "run_at": "document_end",
+    "matches": ["<all_urls>"],
+    "js": ["./js/contentScripts.js"]
+  }],
+  "author": "Black Crow (Roxylius)",
+  "homepage_url": "https://github.com/roxylius/",
+  "short_name": "DinoJump",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "DinoJumpMaster",
+    "default_icon": {
+      "64": "./logo/dino-64.png",
+      "128": "./logo/dino-128.png",
+      "256": "./logo/dino-256.png",
+      "512": "./logo/dino-512.png"
+    }
+  },
+  "icons": {
+    "64": "./logo/dino-64.png",
+    "128": "./logo/dino-128.png",
+    "256": "./logo/dino-256.png",
+    "512": "./logo/dino-512.png"
+  }
+}
